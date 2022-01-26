@@ -27,5 +27,4 @@ The detailed discussion of the data analysis can be found in [this blog post](ht
 
 ## 5) Licesing, Authors, Acknowledgements <a class="anchor" id="licesing"></a>
 * Dataset: [Bias correction of numerical prediction model temperature forecast Data Set](https://archive.ics.uci.edu/ml/datasets/Bias+correction+of+numerical+prediction+model+temperature+forecast#)
-* Cho, D., Yoo, C., Im, J., & Cha, D. (2020). Comparative assessment of various machine learning-based bias correction methods for numerical weather prediction model forecasts of extreme air temperatures in urban areas. Earth and Space Science. (Accepted)
-Please include this citation if you plan to use this database:
+* Paper: [Cho, D., Yoo, C., Im, J., & Cha, D. (2020). Comparative assessment of various machine learning-based bias correction methods for numerical weather prediction model forecasts of extreme air temperatures in urban areas. Earth and Space Science.](https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2019EA000740) 
