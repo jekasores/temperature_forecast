@@ -1,7 +1,28 @@
 #Libraries
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 #Functions
+def year_ditribution(df, column_name):
+    ''' This function plots the anual distribution of a variable to enable comparison by year
+
+    INPUT: 
+            df (dataframe)
+            column_name (string)
+    OUTPUT: None
+    '''
+    sns.displot(df, x=column_name, hue="year", kind="kde").set(title= column_name)
+
+def month_distribution(df, column_name, year):
+    ''' This function plots the monthly distribution of a variable for a given year
+
+    INPUT: 
+            df (dataframe)
+            column_name (string)
+            year (string)
+    OUTPUT: None
+    '''
+    sns.displot(df[df.year==year], x=column_name, hue="month", kind="kde").set(title= column_name+" - "+year)
 
 def check_data_day(df, year, month):
     ''' This function prints the statistics about number of registers available per day
