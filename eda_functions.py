@@ -1,8 +1,40 @@
 #Libraries
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
+import numpy as np
 
 #Functions
+def coef_weights(coefficients, X_train, lm_model):
+    '''
+    INPUT:
+    coefficients - the coefficients of the linear model 
+    X_train - the training data, so the column names can be used
+    OUTPUT:
+    coefs_df - a dataframe holding the coefficient, estimate, and abs(estimate)
+    
+    Provides a dataframe that can be used to understand the most influential coefficients
+    in a linear model by providing the coefficient estimates along with the name of the 
+    variable attached to the coefficient.
+    '''
+    coefs_df = pd.DataFrame()
+    coefs_df['est_int'] = X_train.columns
+    coefs_df['coefs'] = lm_model.coef_
+    coefs_df['abs_coefs'] = np.abs(lm_model.coef_)
+    coefs_df = coefs_df.sort_values('abs_coefs', ascending=False)
+    return coefs_df
+
+def string_into_int(df, col_name):
+    ''' This function converts a columns type string into int from a dataframe
+
+    INPUT: 
+            df (dataframe)
+            column_name (string)
+    OUTPUT: modified df
+    '''
+    df[col_name] = df[col_name].apply(lambda x: int(x))
+    return df
+
 def year_ditribution(df, column_name):
     ''' This function plots the anual distribution of a variable to enable comparison by year
 
